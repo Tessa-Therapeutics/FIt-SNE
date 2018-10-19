@@ -14,7 +14,7 @@ import subprocess
 import struct
 import numpy as np
 
-def fast_tsne(X, theta=.5, perplexity=30, map_dims=2, max_iter=1000, 
+def tsne(X, theta=.5, perplexity=30, map_dims=2, max_iter=1000, 
               stop_early_exag_iter=250, K=-1, sigma=-1, nbody_algo='FFT', knn_algo='annoy',
               mom_switch_iter=250, momentum=.5, final_momentum=.8, learning_rate=200,
               early_exag_coeff=12, no_momentum_during_exag=0, n_trees=50, 
@@ -97,7 +97,7 @@ def fast_tsne(X, theta=.5, perplexity=30, map_dims=2, max_iter=1000,
                 f.write(initialization.tobytes()) 
                
     # run t-sne
-    subprocess.call(os.path.dirname(os.path.realpath(__file__)) + '/bin/fast_tsne')
+    subprocess.call(os.path.dirname(os.path.realpath(__file__)) + '/../bin/fast_tsne')
             
     # read data file
     with open(os.getcwd()+'/result.dat', 'rb') as f:
