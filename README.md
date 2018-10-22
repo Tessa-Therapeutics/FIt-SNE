@@ -5,6 +5,7 @@ Installation instructions: http://www.fftw.org/fftw3_doc/Installation-on-Unix.ht
 
 You can then compile FIt-SNE source code:
 ```g++ -std=c++11 -O3  src/sptree.cpp src/tsne.cpp src/nbodyfft.cpp  -o bin/fast_tsne -pthread -lfftw3 -lm```
+
 It can now be installed:
 ```python setup.py develop```
 
